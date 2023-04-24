@@ -1,6 +1,6 @@
 {
   "name": "fmihel-ajax-plugin-session",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "client side for ajax plugin session",
   "main": "dist/fmihel-ajax-plugin-session.min.js",
   "scripts": {
