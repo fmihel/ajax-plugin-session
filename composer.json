@@ -9,6 +9,9 @@
             "email": "fmihel76@gmail.com"
         }
     ],
+    "archive": {
+        "exclude": ["/client", ".npmignore","package.json","package-lock.json","rollup.config.js","rollup.config.min.js"]
+    },        
     "autoload": {
         "psr-4": {
             "fmihel\\": "server"
@@ -20,7 +23,6 @@
         }
     },
     "require": {
-        "fmihel/console-log": "^1.4",
-        "fmihel/ajax": "^0.0.7"
+        "fmihel/ajax": ">=0.0.7"
     }
 }
