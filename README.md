@@ -2,7 +2,11 @@
 session plugin for fmihel/ajax solution
 see and install https://github.com/fmihel/ajax
 
-## Install plugin
+[1. Install plugin](#install)<br/>
+[2. Simple use](#simpleuse)<br/>
+[3. API](#api)<br/>
+
+# <a name="install">Install plugin</a>
 
 ```bash
 $ npm i fmihel-ajax-plugin-session
@@ -14,7 +18,8 @@ $ cd ./vendor/fmihel/ajax-plugin-session && ./composer-after-install.sh && cd ..
 
 ```
 
-## Simple use
+
+# <a name="simpleuse">Simple use</a>
 file struct
 ```
 path
@@ -119,6 +124,17 @@ if (ajax::enabled()) {
     ajax::out('hi, from server');
     
 ```
+
+# <a name="api">API</a>
+
+class ```Session```
+|method|result|notes|
+|----|----|----|
+|autorize({login,pass,sid})|promise|try autorize width login and pass or sid(session id)|
+|logout()|promise|break current session|
+|enabled()|bool|session status|
+|on(event,callback)|function|event listener. event = ``'autorize'`` or ``'logout'``,return function for off listen|
+
 
 
 
