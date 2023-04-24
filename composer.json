@@ -1,0 +1,26 @@
+{
+    "name": "fmihel/ajax-plugin-session",
+    "description": "php,session,plugin, ajax",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "fmihel",
+            "email": "fmihel76@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "fmihel\\": "server"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "fmihel\\test\\": "tests"
+        }
+    },
+    "require": {
+        "fmihel/console-log": "^1.4",
+        "fmihel/ajax": "^0.0.7"
+    }
+}
