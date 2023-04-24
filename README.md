@@ -32,18 +32,25 @@ path
 ```client/index.js```
 ```js 
 import ajax from 'fmihel-ajax';
-import 'session.js';
+import session from './session.js';
 
-ajax::send({
-    to:'server/mod',
-    data:{ msg: 'send msg to server',any_num:10,arr:[1,32,4,2]},
+session.autorize({ 
+    login:'1',
+    pass:'1',
 })
-.then(data=>{
-    console.info(data);
-})
-.catch(e=>{
-    console.error(e);
-});
+    .then(()=>{
+        return ajax::send({
+            to:'server/mod',
+            data:{ msg: 'send msg to server',any_num:10,arr:[1,32,4,2]},
+        })
+    })
+    .then((data)=>{
+        console.info(data);
+        return session.logout();
+    })
+    .catch((e)=>{
+        console.error(e);
+    });
 
 ```
 
