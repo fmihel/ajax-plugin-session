@@ -1,0 +1,136 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "610ae10e528f4701bb1f053d7cac0673",
+    "packages": [
+        {
+            "name": "fmihel/ajax",
+            "version": "v0.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fmihel/ajax.git",
+                "reference": "a9d422b0d26ad22e742e03d45812b0d4bb5898b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fmihel/ajax/zipball/a9d422b0d26ad22e742e03d45812b0d4bb5898b5",
+                "reference": "a9d422b0d26ad22e742e03d45812b0d4bb5898b5",
+                "shasum": ""
+            },
+            "require": {
+                "smoren/mushroom-hook-manager": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "mushroom-use-hooks": true,
+                "mushroom-hooks": {
+                    "after-install": [
+                        "fmihel\\MushroomHooks::afterInstall"
+                    ],
+                    "after-update": [
+                        "fmihel\\MushroomHooks::afterInstall"
+                    ]
+                },
+                "mushroom-clear": [
+                    "client",
+                    ".npmignore",
+                    "package.json",
+                    "package-lock.json",
+                    "rollup.config.js",
+                    "rollup.config.min.js",
+                    "index.js",
+                    ".gitignore"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "fmihel\\": "server/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "fmihel",
+                    "email": "fmihel76@gmail.com"
+                }
+            ],
+            "description": "ajax responser of apache/php server",
+            "support": {
+                "issues": "https://github.com/fmihel/ajax/issues",
+                "source": "https://github.com/fmihel/ajax/tree/v0.0.11"
+            },
+            "time": "2023-04-25T13:01:24+00:00"
+        },
+        {
+            "name": "smoren/mushroom-hook-manager",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Smoren/mushroom-hook-manager-php.git",
+                "reference": "0d8d40b6184028932dccebd0a414e0e67c03d9f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Smoren/mushroom-hook-manager-php/zipball/0d8d40b6184028932dccebd0a414e0e67c03d9f1",
+                "reference": "0d8d40b6184028932dccebd0a414e0e67c03d9f1",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.1",
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "composer/composer": "^2.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "\\Smoren\\Composer\\Mushroom\\HookManager"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Smoren\\Composer\\Mushroom\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Smoren",
+                    "email": "ofigate@gmail.com"
+                }
+            ],
+            "description": "Composer plugin for running post-install/post-update scripts of your project's dependencies",
+            "keywords": [
+                "HOOK",
+                "after install",
+                "after update",
+                "composer",
+                "dependency",
+                "plugin",
+                "script"
+            ],
+            "support": {
+                "issues": "https://github.com/Smoren/mushroom-hook-manager-php/issues",
+                "source": "https://github.com/Smoren/mushroom-hook-manager-php/tree/v1.0.0"
+            },
+            "time": "2021-12-10T17:51:32+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}

@@ -9,9 +9,6 @@
             "email": "fmihel76@gmail.com"
         }
     ],
-    "archive": {
-        "exclude": ["/client", ".npmignore","package.json","package-lock.json","rollup.config.js","rollup.config.min.js"]
-    },        
     "autoload": {
         "psr-4": {
             "fmihel\\": "server"
@@ -23,6 +20,28 @@
         }
     },
     "require": {
-        "fmihel/ajax": ">=0.0.7"
-    }
+        "fmihel/ajax": ">=0.0.7",
+        "smoren/mushroom-hook-manager": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "smoren/mushroom-hook-manager": true
+        }
+    },
+    "extra": {
+        "mushroom-use-hooks": true,
+        "mushroom-hooks": {
+            "after-install": [
+                "fmihel\\MushroomHooks::afterInstall"
+            ],
+            "after-update": [
+                "fmihel\\MushroomHooks::afterInstall"
+            ]
+        },
+        "mushroom-clear":[
+            "client", ".npmignore","package.json","package-lock.json","rollup.config.js","rollup.config.min.js",".gitignore"
+        ]
+            
+        
+    }        
 }
