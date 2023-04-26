@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "610ae10e528f4701bb1f053d7cac0673",
+    "content-hash": "08d75a0305edf08a949a4f3119209b6a",
     "packages": [
         {
             "name": "fmihel/ajax",
-            "version": "v0.0.11",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fmihel/ajax.git",
-                "reference": "a9d422b0d26ad22e742e03d45812b0d4bb5898b5"
+                "reference": "4abd15354352ea14e93b1f4a02558a40f377716e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fmihel/ajax/zipball/a9d422b0d26ad22e742e03d45812b0d4bb5898b5",
-                "reference": "a9d422b0d26ad22e742e03d45812b0d4bb5898b5",
+                "url": "https://api.github.com/repos/fmihel/ajax/zipball/4abd15354352ea14e93b1f4a02558a40f377716e",
+                "reference": "4abd15354352ea14e93b1f4a02558a40f377716e",
                 "shasum": ""
             },
             "require": {
@@ -28,10 +28,10 @@
                 "mushroom-use-hooks": true,
                 "mushroom-hooks": {
                     "after-install": [
-                        "fmihel\\MushroomHooks::afterInstall"
+                        "fmihel\\ajax\\MushroomHooks::afterInstall"
                     ],
                     "after-update": [
-                        "fmihel\\MushroomHooks::afterInstall"
+                        "fmihel\\ajax\\MushroomHooks::afterInstall"
                     ]
                 },
                 "mushroom-clear": [
@@ -47,7 +47,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "fmihel\\": "server/"
+                    "fmihel\\ajax\\": "server/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -63,9 +63,9 @@
             "description": "ajax responser of apache/php server",
             "support": {
                 "issues": "https://github.com/fmihel/ajax/issues",
-                "source": "https://github.com/fmihel/ajax/tree/v0.0.11"
+                "source": "https://github.com/fmihel/ajax/tree/v1.0.0"
             },
-            "time": "2023-04-25T13:01:24+00:00"
+            "time": "2023-04-26T11:25:51+00:00"
         },
         {
             "name": "smoren/mushroom-hook-manager",
