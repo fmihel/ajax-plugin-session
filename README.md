@@ -1,4 +1,4 @@
-# ajax-plugin-session
+# ajax-plugin-session v1.0
 session plugin for fmihel/ajax solution
 see and install https://github.com/fmihel/ajax
 
@@ -72,7 +72,7 @@ export default ajax.addPlugin(new Session(ajax));
 ```php
 <?php
 
-use fmihel\session\SessionDefault;
+use fmihel\ajax\plughin\session\SessionDefault;
 
 class MySession extends SessionDefault{
 
@@ -94,8 +94,8 @@ class MySession extends SessionDefault{
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/server/session/MySession.php';
 
-use fmihel\ajax;
-use fmihel\session;
+use fmihel\ajax\ajax;
+use fmihel\ajax\plugin\session\session;
 
 if (ajax::enabled()) {
     try {

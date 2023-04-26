@@ -1,17 +1,17 @@
 <?php
-namespace fmihel\Ajax\Session;
+namespace fmihel\ajax\plugin\session;
 
-use fmihel\Ajax\AjaxPlugin;
+use fmihel\ajax\Plugin;
 
-require_once __DIR__ . '/session/iSession.php';
-require_once __DIR__ . '/session/SessionDefault.php';
+//require_once __DIR__ . '/iSession.php';
+//require_once __DIR__ . '/SessionDefault.php';
 
-class session extends AjaxPlugin
+class session extends Plugin
 {
 
     private static $session;
 
-    public function __construct($sessionClass = 'fmihel\Ajax\Session\SessionDefault')
+    public function __construct($sessionClass = 'fmihel\ajax\plugin\session\SessionDefault')
     {
         self::$session = new $sessionClass();
     }
@@ -21,16 +21,16 @@ class session extends AjaxPlugin
         $to = $pack['to'];
 
         if ($to === 'session/autorize') {
-            $this->router::out(session::autorize($this->router::$data));
+            $this->ajax::out(session::autorize($this->ajax::$data));
 
         }if ($pack['to'] === 'session/logout') {
 
             session::logout();
-            $this->router::out(['session' => []]);
+            $this->ajax::out(['session' => []]);
 
         } else {
             if (!isset($pack['session']) || empty(session::autorize($pack['session']))) {
-                $this->router::error('no autorize', ['session' => []]);
+                $this->ajax::error('no autorize', ['session' => []]);
             }
         }
         return $pack;

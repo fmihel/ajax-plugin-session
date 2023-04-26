@@ -11,16 +11,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "fmihel\\Ajax\\Session\\": "server/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "fmihel\\test\\": "tests"
+            "fmihel\\ajax\\plugin\\session\\": "server/"
         }
     },
     "require": {
-        "fmihel/ajax": ">=0.0.7",
+        "fmihel/ajax": ">=1.0.0",
         "smoren/mushroom-hook-manager": "^1.0"
     },
     "config": {
@@ -32,14 +27,14 @@
         "mushroom-use-hooks": true,
         "mushroom-hooks": {
             "after-install": [
-                "fmihel\\Ajax\\Session\\MushroomHooks::afterInstall"
+                "fmihel\\ajax\\plugin\\session\\MushroomHooks::afterInstall"
             ],
             "after-update": [
-                "fmihel\\Ajax\\Session\\MushroomHooks::afterInstall"
+                "fmihel\\ajax\\plugin\\session\\MushroomHooks::afterInstall"
             ]
         },
         "mushroom-clear":[
-            "client", ".npmignore","package.json","package-lock.json","rollup.config.js","rollup.config.min.js",".gitignore"
+            "client", ".npmignore","package.json","package-lock.json","rollup.config.js","rollup.config.min.js",".gitignore",".eslintignore",".eslintrc.js",".babelrc"
         ]
             
         

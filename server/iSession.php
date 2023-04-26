@@ -1,5 +1,5 @@
 <?php
-namespace fmihel\Ajax\Session;
+namespace fmihel\ajax\plugin\session;
 
 interface iSession
 {
