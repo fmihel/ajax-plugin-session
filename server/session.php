@@ -1,7 +1,7 @@
 <?php
-namespace fmihel;
+namespace fmihel\Ajax\Session;
 
-use fmihel\AjaxPlugin;
+use fmihel\Ajax\AjaxPlugin;
 
 require_once __DIR__ . '/session/iSession.php';
 require_once __DIR__ . '/session/SessionDefault.php';
@@ -11,7 +11,7 @@ class session extends AjaxPlugin
 
     private static $session;
 
-    public function __construct($sessionClass = 'fmihel\session\SessionDefault')
+    public function __construct($sessionClass = 'fmihel\Ajax\Session\SessionDefault')
     {
         self::$session = new $sessionClass();
     }

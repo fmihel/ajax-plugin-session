@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "fmihel\\": "server"
+            "fmihel\\Ajax\\Session": "server/"
         }
     },
     "autoload-dev": {
@@ -32,10 +32,10 @@
         "mushroom-use-hooks": true,
         "mushroom-hooks": {
             "after-install": [
-                "fmihel\\MushroomHooks::afterInstall"
+                "fmihel\\Ajax\\Session\\MushroomHooks::afterInstall"
             ],
             "after-update": [
-                "fmihel\\MushroomHooks::afterInstall"
+                "fmihel\\Ajax\\Session\\MushroomHooks::afterInstall"
             ]
         },
         "mushroom-clear":[

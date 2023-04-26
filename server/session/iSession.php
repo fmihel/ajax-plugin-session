@@ -1,8 +1,9 @@
 <?php
-namespace fmihel\session;
+namespace fmihel\Ajax\Session;
 
-interface iSession{
-    public function autorize($params=[]):array;
+interface iSession
+{
+    public function autorize($params = []): array;
     public function logout();
-    public function enabled():bool;
+    public function enabled(): bool;
 };

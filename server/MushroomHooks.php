@@ -1,6 +1,6 @@
 <?php
 
-namespace fmihel;
+namespace fmihel\Ajax\Session;
 
 class MushroomHooks
 {
