@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "fmihel\\Ajax\\Session": "server/"
+            "fmihel\\Ajax\\Session\\": "server/"
         }
     },
     "autoload-dev": {
