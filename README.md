@@ -95,14 +95,14 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/server/session/MySession.php';
 
 use fmihel\ajax\ajax;
-use fmihel\ajax\plugin\session\session;
+use fmihel\ajax\plugin\session\SessionPlugin;
 
 if (ajax::enabled()) {
     try {
 
         ajax::init([
             'plugins' => [
-                new session('MySession'),
+                new SessionPlugin('MySession'),
             ]
         ]);
         require_once ajax::module();
