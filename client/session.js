@@ -82,7 +82,7 @@ export default class Session {
                 ...(sid ? { sid } : {}),
             },
         }).then((data) => {
-            if ('login' in data) {
+            if ('sid' in data) {
                 const prev = { ...t.private, data: { ...t.private.data } };
                 t.private.enabled = true;
                 t.private.data = { ...data };

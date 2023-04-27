@@ -6,14 +6,14 @@ use fmihel\ajax\Plugin;
 //require_once __DIR__ . '/iSession.php';
 //require_once __DIR__ . '/SessionDefault.php';
 
-class session extends Plugin
+class SessionPlugin extends Plugin
 {
 
-    private static $session;
+    private $session;
 
     public function __construct($sessionClass = 'fmihel\ajax\plugin\session\SessionDefault')
     {
-        self::$session = new $sessionClass();
+        $this->session = new $sessionClass();
     }
 
     public function before($pack)
@@ -21,15 +21,16 @@ class session extends Plugin
         $to = $pack['to'];
 
         if ($to === 'session/autorize') {
-            $this->ajax::out(session::autorize($this->ajax::$data));
+
+            $this->ajax::out($this->autorize($this->ajax::$data));
 
         }if ($pack['to'] === 'session/logout') {
 
-            session::logout();
+            $this->logout();
             $this->ajax::out(['session' => []]);
 
         } else {
-            if (!isset($pack['session']) || empty(session::autorize($pack['session']))) {
+            if (!isset($pack['session']) || empty($this->autorize($pack['session']))) {
                 $this->ajax::error('no autorize', ['session' => []]);
             }
         }
@@ -37,19 +38,19 @@ class session extends Plugin
 
     }
 
-    public static function autorize($param = [])
+    public function autorize($param = [])
     {
-        return self::$session->autorize($param);
+        return $this->session->autorize($param);
     }
 
-    public static function logout()
+    public function logout()
     {
-        self::$session->logout();
+        return $this->session->logout();
     }
 
-    public static function enabled()
+    public function enabled()
     {
-        return self::$session->enabled();
+        return $this->session->enabled();
     }
 
 }
