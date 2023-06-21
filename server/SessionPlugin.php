@@ -10,10 +10,15 @@ class SessionPlugin extends Plugin
 {
 
     private $session;
+    private $params = [];
 
-    public function __construct($sessionClass = 'fmihel\ajax\plugin\session\SessionDefault')
+    public function __construct($sessionClass = 'fmihel\ajax\plugin\session\SessionDefault', $params = [])
     {
         $this->session = new $sessionClass();
+
+        $this->params = array_merge([
+            'exclude' => [],
+        ], $params);
     }
 
     public function before($pack)
@@ -30,14 +35,27 @@ class SessionPlugin extends Plugin
             $this->ajax::out(['session' => []]);
 
         } else {
-            if (!isset($pack['session']) || empty($this->autorize($pack['session']))) {
-                $this->ajax::error('no autorize', ['session' => []]);
+            if (!$this->pathExclude($to)) {
+                if (!isset($pack['session']) || empty($this->autorize($pack['session']))) {
+                    $this->ajax::error('no autorize', ['session' => []]);
+                }
             }
         }
         return $pack;
 
     }
 
+    private function pathExclude($path): bool
+    {
+        $exclude = $this->params['exclude'];
+        foreach ($exclude as $ex) {
+            if ($path === $ex) {
+                return true;
+            }
+        }
+
+        return false;
+    }
     public function autorize($param = [])
     {
         return $this->session->autorize($param);
