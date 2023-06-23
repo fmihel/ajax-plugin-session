@@ -56,9 +56,9 @@ export default class Session {
 
     _close() {
         if (this.private.enabled) {
-            this.do('logout');
             this.private.enabled = false;
             this.private.data = {};
+            this.do('logout');
             return true;
         }
         return false;

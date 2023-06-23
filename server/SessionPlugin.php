@@ -39,6 +39,9 @@ class SessionPlugin extends Plugin
                 if (!isset($pack['session']) || empty($this->autorize($pack['session']))) {
                     $this->ajax::error('no autorize', ['session' => []]);
                 }
+            } else {
+                // добавлена имитация сессии , чтобы не сбрасывалось при ответе
+                $pack['session'] = array_merge(['sid' => '0000-0000-0000']);
             }
         }
         return $pack;
