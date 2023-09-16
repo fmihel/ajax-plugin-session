@@ -52,8 +52,10 @@ class SessionPlugin extends Plugin
     {
         $exclude = $this->params['exclude'];
         foreach ($exclude as $ex) {
-            if ($path === $ex) {
-                return true;
+            if (is_callable($ex)){
+                return ($ex($path) === true);
+            }elseif  ($path === $ex) {
+                    return true;
             }
         }
 

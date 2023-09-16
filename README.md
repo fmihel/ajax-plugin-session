@@ -126,15 +126,28 @@ if (ajax::enabled()) {
 ```
 
 # <a name="api">API</a>
+#####  ``server/php``
 
-class ```Session```
+class ```SessionPlugin```
+|method|result|param|notes|
+|----|----|----|----|
+|__construct(string `$sessionClass`,array `$params`)|||create session plugin and connect to session handler  |
+|||$sessionClass`|name of session handler, see `iSession` interface |
+|||$params|array of addition params: <br> `exclude` - list of path that will be ignored by the plugin, path may be as `string` or `function($path)` - return true if path need ignored |
+|||||
+
+
+
+
+#####  ``client/javascript``
+class ```Session``` 
 |method|result|notes|
 |----|----|----|
-|autorize({login,pass,sid})|promise|try autorize width login and pass or sid(session id)|
+|autorize({login,pass,sid})|promise|try autorize with login and pass or sid(session id)|
 |logout()|promise|break current session|
 |enabled()|bool|session status|
 |on(event,callback)|function|event listener. event = ``'autorize'`` or ``'logout'``,return function for off listen|
-
+||||
 
 
 
