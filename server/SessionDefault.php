@@ -15,7 +15,11 @@ class SessionDefault implements iSession
 
         if (isset($params['sid'])) {
             $user = self::findUser(['sid' => $params['sid']]);
-            if (!empty($user)) {
+            if (isset($user['sid'])) {
+
+                unset($user['login']);
+                unset($user['pass']);
+
                 $this->enable = true;
                 $this->current = $user;
                 return $this->current;
@@ -23,7 +27,11 @@ class SessionDefault implements iSession
         } elseif (isset($params['login']) && isset($params['pass'])) {
 
             $user = self::findUser(['login' => $params['login'], 'pass' => $params['pass']]);
-            if (!empty($user)) {
+            if (isset($user['sid'])) {
+
+                unset($user['login']);
+                unset($user['pass']);
+
                 $this->enable = true;
                 $this->current = $user;
                 return $this->current;

@@ -1,4 +1,4 @@
-# ajax-plugin-session v1.0
+# ajax-plugin-session v1.1.1
 session plugin for fmihel/ajax solution
 see and install https://github.com/fmihel/ajax
 
