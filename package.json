@@ -23,6 +23,9 @@
     "url": "https://github.com/fmihel/ajax-plugin-session/issues"
   },
   "homepage": "https://github.com/fmihel/ajax-plugin-session#readme",
+  "peerDependencies": {
+    "fmihel-ajax": "1.x"  
+  },
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",

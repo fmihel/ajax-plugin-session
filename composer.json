@@ -15,7 +15,7 @@
         }
     },
     "require": {
-        "fmihel/ajax": ">=1.0.0",
+        "fmihel/ajax": "1.*",
         "smoren/mushroom-hook-manager": "^1.0"
     },
     "config": {
