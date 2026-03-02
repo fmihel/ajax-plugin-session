@@ -8,6 +8,7 @@ use fmihel\ajax\Plugin;
 
 class SessionPlugin extends Plugin
 {
+    const ZERRO_SESSION = '0000-0000-0000';
 
     private $session;
     private $params = [];
@@ -26,22 +27,24 @@ class SessionPlugin extends Plugin
         $to = $pack['to'];
 
         if ($to === 'session/autorize') {
-
             $this->ajax::out($this->autorize($this->ajax::$data));
+        }
 
-        }if ($pack['to'] === 'session/logout') {
+        if ($pack['to'] === 'session/logout') {
 
             $this->logout();
             $this->ajax::out(['session' => []]);
 
         } else {
-            if (!$this->pathExclude($to)) {
-                if (!isset($pack['session']) || empty($this->autorize($pack['session']))) {
+            if (! $this->pathExclude($to)) {
+                if (! isset($pack['session']) || empty($session = $this->autorize($pack['session']))) {
                     $this->ajax::error('no autorize', ['session' => []]);
                 }
+                $pack['session'] = $session;
+
             } else {
                 // добавлена имитация сессии , чтобы не сбрасывалось при ответе
-                $pack['session'] = array_merge(['sid' => '0000-0000-0000']);
+                $pack['session'] = array_merge(['sid' => self::ZERRO_SESSION]);
             }
         }
         return $pack;
@@ -52,10 +55,10 @@ class SessionPlugin extends Plugin
     {
         $exclude = $this->params['exclude'];
         foreach ($exclude as $ex) {
-            if (is_callable($ex)){
+            if (is_callable($ex)) {
                 return ($ex($path) === true);
-            }elseif  ($path === $ex) {
-                    return true;
+            } elseif ($path === $ex) {
+                return true;
             }
         }
 

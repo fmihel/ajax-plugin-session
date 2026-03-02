@@ -20,6 +20,7 @@
  * session.logout();
  *
  */
+
 export default class Session {
     constructor(router) {
         this.private = {
@@ -32,6 +33,7 @@ export default class Session {
         this.after = this.after.bind(this);
         this.events = { autorize: [], logout: [] };
         this.paths = ['session/autorize', 'session/logout'];
+        this.ZERRO_SESSION = '0000-0000-0000';
     }
 
     /** обработчик перед отправкой,
@@ -51,6 +53,11 @@ export default class Session {
         if (this.paths.indexOf(to) < 0 && (Array.isArray(session) && session.length === 0)) {
             this._close();
         }
+
+        if (this.paths.indexOf(to) < 0 && session.sid !== this.ZERRO_SESSION) {
+            this.private.data = { ...session };
+        }
+
         return pack;
     }
 
