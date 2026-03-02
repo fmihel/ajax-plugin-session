@@ -107,8 +107,9 @@ export default class Session {
 
     /** разрыв авторизации */
     logout() {
+        const { sid } = this.private.data;
         if (this._close()) {
-            this.router.send({ to: 'session/logout' });
+            this.router.send({ to: 'session/logout', data: { sid } });
         }
     }
 
