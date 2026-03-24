@@ -1,4 +1,4 @@
-# ajax-plugin-session v2.x.x
+# ajax-plugin-session v3
 session plugin for fmihel/ajax solution
 see and install https://github.com/fmihel/ajax
 
@@ -120,7 +120,7 @@ if (ajax::enabled()) {
 ```php
 <?php
     use fmihel\ajax;
-    error_log(print_r(ajax::$data,true));
+    error_log(print_r(ajax::data(),true));
     ajax::out('hi, from server');
     
 ```

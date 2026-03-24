@@ -27,7 +27,7 @@ class SessionPlugin extends Plugin
         $to = $pack['to'];
 
         if ($to === 'session/autorize') {
-            $this->ajax::out($this->autorize($this->ajax::$data));
+            $this->ajax::out($this->autorize($pack['data']));
         }
 
         if ($pack['to'] === 'session/logout') {
